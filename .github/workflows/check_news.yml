@@ -2,11 +2,11 @@ name: Check Ravens News
 
 on:
   schedule:
-    # Runs every 30 minutes (UTC)
-    - cron: "*/30 * * * *"
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+    # Runs at minutes 7 and 37 past every hour (UTC) to avoid peak minute congestion
+    - cron: "7,37 * * * *"
+  workflow_dispatch: # Enables manual trigger button under the Actions tab in GitHub UI
 
-# Grant write permissions so the bot can commit seen_news.txt back to the repo
+# Grants write permissions so the bot can save seen_news.txt back to the repository
 permissions:
   contents: write
 
