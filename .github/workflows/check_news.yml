@@ -20,7 +20,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Run Ravens Notifier Script
-        run: uv run main.py
+        run: uv run ravens_notifier.py
 
       - name: Commit seen_news.txt changes
         uses: stefanzweifel/git-auto-commit-action@v5
