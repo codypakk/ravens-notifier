@@ -22,7 +22,7 @@ Managed with [`uv`](https://github.com/astral-sh/uv) and automatically executed 
 
 1. Download the **ntfy** app on your phone ([iOS App Store](https://apps.apple.com/us/app/ntfy/id1625396386) or [Google Play Store](https://play.google.com/store/apps/details?id=io.heckel.ntfy)).
 2. Open the app and tap **Subscribe to topic** (`+`).
-3. Enter your secret topic string (e.g., `ravens-news-78932`) and tap **Subscribe**.
+3. Enter your secret topic string (e.g., `ravens-notifier`) and tap **Subscribe**.
 
 ### 2. Local Machine Setup
 
