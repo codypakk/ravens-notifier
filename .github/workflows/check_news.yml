@@ -2,7 +2,7 @@ name: Ravens News Notifier
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "23 * * * *"
   workflow_dispatch: # Enables the manual "Run workflow" button in GitHub Actions
 
 permissions:
