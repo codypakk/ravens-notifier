@@ -4,7 +4,7 @@ import requests
 import feedparser
 
 # RSS Feed
-RSS_URL = "https://www.baltimoreravens.com/c2j/rss/news"
+RSS_URL = "https://www.baltimoreravens.com/rss/news"
 
 NTFY_TOPIC = "ravens-notifier"
 NTFY_URL = f"https://ntfy.sh/{NTFY_TOPIC}"
