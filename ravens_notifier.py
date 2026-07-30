@@ -38,6 +38,7 @@ def check_and_notify():
                     "Title": f"Ravens News: {title}",
                     "Click": link,
                     "Tags": "football,baltimore",
+                    "Priority": "high",
                 }
             )
 
