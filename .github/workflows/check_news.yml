@@ -1,35 +1,41 @@
 name: Check Ravens News
 
 on:
+  workflow_dispatch:
   schedule:
-    # Runs at minutes 7 and 37 past every hour (UTC) to avoid peak minute congestion
-    - cron: "7,37 * * * *"
-  workflow_dispatch: # Enables manual trigger button under the Actions tab in GitHub UI
+    - cron: "17 * * * *"
 
-# Grants write permissions so the bot can save seen_news.txt back to the repository
+# Grant write permissions so the bot can commit seen_news.txt back to main
 permissions:
   contents: write
 
 jobs:
-  run-notifier:
+  check-rss:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-
       - name: Set up Python
-        run: uv python install
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
 
-      - name: Run news notifier
-        run: uv run ravens_notifier.py
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests feedparser
 
-      - name: Commit seen news cache
+      - name: Run Ravens Notifier Script
+        run: |
+          python ravens_notifier.py
+
+      - name: Commit Updated Seen News Cache
+        if: always()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add seen_news.txt
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update seen news cache [skip ci]"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Chore: update seen news cache [skip ci]" && git push)
