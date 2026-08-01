@@ -1,4 +1,4 @@
-name: Ravens News Notifier
+name: feed update
 
 on:
   schedule:
