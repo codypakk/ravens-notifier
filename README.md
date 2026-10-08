@@ -22,20 +22,4 @@ Managed with [`uv`](https://github.com/astral-sh/uv) and automatically executed 
 
 1. Download the **ntfy** app on your phone ([iOS App Store](https://apps.apple.com/us/app/ntfy/id1625396386) or [Google Play Store](https://play.google.com/store/apps/details?id=io.heckel.ntfy)).
 2. Open the app and tap **Subscribe to topic** (`+`).
-3. Enter your secret topic string (e.g., `ravens-notifier`) and tap **Subscribe**.
-
-### 2. Local Machine Setup
-
-Ensure `uv` is installed on your local development environment (WSL / Linux / macOS):
-
-```bash
-# Install uv package manager
-curl -sSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | sh
-
-# Clone the repository
-git clone git@github.com:YOUR_USERNAME/ravens-notifier.git
-cd ravens-notifier
-
-# Sync and set up virtual environment
-uv sync
-```
+3. Enter the secret topic string (e.g., `ravens-notifier`) and tap **Subscribe**.
